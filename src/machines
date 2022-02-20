@@ -1,5 +1,6 @@
-docker-openmpi4-node-5
-docker-openmpi4-node-4
-docker-openmpi4-node-3
-docker-openmpi4-node-2
-docker-openmpi4-head-1
+docker-openmpi4-node-5 slots=1
+docker-openmpi4-node-4 slots=1
+docker-openmpi4-node-3 slots=1
+docker-openmpi4-node-2 slots=1
+docker-openmpi4-node-1 slots=1
+docker-openmpi4-head-1 slots=1

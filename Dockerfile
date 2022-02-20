@@ -17,6 +17,7 @@ RUN sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so
 
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
+RUN export LD_LIBRARY_PATH=$(mpic++ -showme:libdirs)
 
 # ------------------------------------------------------------
 # Add a 'tutorial' user
@@ -39,7 +40,6 @@ ADD ssh/id_rsa.mpi.pub .ssh/authorized_keys
 
 RUN chmod -R 600 .ssh/* && \
     chown -R tutorial:tutorial .ssh
-
 
 #-------------------------------------------------------------
 # Install mpi4py

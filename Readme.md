@@ -22,9 +22,10 @@ $> ssh -i ssh/id_rsa.mpi -p $( source echo_head_port.sh ) tutorial@localhost
 ```
 
 Finally, test the OpenMPI environment running the following commands
-in the head node (through the ssh session opened by the previos command)
+in the head node (through the ssh session opened by the previos command).
+Keep in mind that the number of processes to span is defined in the `machines` hotsfile
 
 ```
 	cd src
-  mpiexec -hostfile machines -n 6 python3 helloworld.py
+  mpiexec -hostfile machines python3 helloworld.py
 ```
