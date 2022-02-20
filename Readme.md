@@ -26,6 +26,6 @@ in the head node (through the ssh session opened by the previos command).
 Keep in mind that the number of processes to span is defined in the `machines` hotsfile
 
 ```
-	cd src
-  mpiexec -hostfile machines python3 helloworld.py
+$> cd src
+$> mpiexec -hostfile machines python3 helloworld.py
 ```
