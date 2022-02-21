@@ -11,6 +11,7 @@ Run 6 replicas of this container with one of them being the head node.
 
 ```
 $> docker-compose up -d --scale head=1 --scale node=5
+$> bash build_hostfile.sh
 ```
 
 ****Note***: If you need to modify the number of process to run, remember to modify the content of the `./src/machines` file*
