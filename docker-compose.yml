@@ -4,7 +4,11 @@ services:
     build: .
     ports: 
       - "22"
+    volumes:
+      - "./src:/home/tutorial/src"
 
   node: 
     build: .
+    volumes:
+      - "./src:/home/tutorial/src"
 
