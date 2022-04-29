@@ -7,19 +7,26 @@ the OpenMPI runtime updated to the latest version.
 
 ## Getting Started
 
+
 Run 6 replicas of this container with one of them being the head node.
 
 ```
-$> docker-compose up -d --scale head=1 --scale node=5
+$> docker compose up -d --scale head=1 --scale node=5 --force-recreate --build
 $> bash build_hostfile.sh
 ```
 
 ****Note***: If you need to modify the number of process to run, remember to modify the content of the `./src/machines` file*
 
-Next you will need to connect to the head node using the following command
+Next you will need to connect to the head node, but first, change the permissions of the ssh key:
 
 ```
-$> ssh -i ssh/id_rsa.mpi -p $( source echo_head_port.sh ) tutorial@localhost
+$> chmod -R 400 ./ssh/*
+```
+
+Then connect using the following command
+
+```
+$> ssh -i ./ssh/id_rsa.mpi -p $( source echo_head_port.sh ) tutorial@localhost
 ```
 
 Finally, test the OpenMPI environment running the following commands
